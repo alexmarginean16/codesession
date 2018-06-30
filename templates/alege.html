@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('index') }}">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}">Profil ({{ uname }})
+					</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="selec">
+		<div class="container">
+			{% if error %}
+		 		<p class=error><strong>Eroare:</strong> {{ error }}</p>
+		 		<center><a href="{{ url_for('index') }}">Inapoi la pagina principala </a></center>
+			{% endif %}
+			{% if error is none %}
+				<h1>Selecteaza un oponent din lista celor online:</h1>
+			 	<table class="clasament">
+					<thead>
+						<tr>
+							<th>Nume de utilizator</th>
+							<th>Online</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for i in user %}
+							<tr>
+								<td><a href="{{ url_for('injoc', usrn=i.username,grad=grad) }}">{{i.username}}</a></td>
+								<td><span class="online"></span></td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% endif %}
+		</div>
+	</section>
+{% endblock %}

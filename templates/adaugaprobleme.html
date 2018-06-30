@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('index') }}">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}">Profil ({{ uname }})
+					</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="admin">
+		<div class="container">
+			<br>
+			<form method="POST" action="{{ url_for('adaugaprobleme') }}">
+				<div class="container">
+					<h1 class="t">Adauga o problema!</h1>
+					<input type="text" placeholder="Titlu:" class="textfield_1" name="titlu">
+					<textarea type="text" placeholder="enunt:" class="textfield_2" name="enunt"></textarea>
+					<input type="text" placeholder="Date de intrare:" class="textfield_1" name="datedeintrare">
+					<input type="text" placeholder="Date de iesire:" class="textfield_1" name="datedeiesire">
+					<button type="submit" class="input_btn2">Adauga!</button>
+				</div>
+			</form>
+		</div>
+	</section>
+{% endblock %}

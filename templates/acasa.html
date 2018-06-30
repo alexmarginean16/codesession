@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('acasa') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('acasa') }}" class="current">Acasa</a></li>
+					<li><a href="{{ url_for('despre') }}">Despre</a></li>
+					<li><a href="{{ url_for('login') }}">Sign In</a></li>
+					<li><button onclick="window.location.href='{{ url_for('inregistrare') }}'" class="input_btn1">Sign up</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="representation">
+		<div class="container">
+			<h1>Esti pregatit pentru o provocare?</h>
+			<h3><a href="{{ url_for('inregistrare') }}">Inregitreaza-te acum!</a></h3>
+			<img src="../static/images/mac.png" id="imac">
+		</div>
+	</section>
+
+	<section class="motto">
+		<div class="container">
+			<h1>Cum functioneaza sistemul?</h1>
+		</div>
+	</section>
+
+	<section class="information">
+		<div class="container">
+			
+				<div class="box">
+					<img src="../static/images/person.png">
+					<h4>Inregistrare</h4>
+					<p>Creeaza-ti un cont pe site, apoi adauga mai multe informatii despre tine(exemplu: fotografie de profil)</p>
+				</div>
+				<div class="box">
+					<img src="../static/images/code2.png">
+					<h4>Concureaza</h4>
+					<p>Alege un utilizator din lista de utilizatori conectati pentru a incepe jocul, apoi dupa generarea problemei, ambii utilizatori trebuie sa rezolve problema si sa o trimita spre corectare.</p>
+				</div>
+				<div class="box">
+					<img src="../static/images/badge.png">
+					<h4>Fii premiat</h4>
+					<p>Cand profesorul corecteaza solutiile, el v-a decide un punctaj pentru fiecare participant si care dintre ei este castigatorul. Pe parcurs, ultilizatorii sunt premiati cu puncte si medalii.</p>
+				</div>
+
+		</div>
+	</section>
+
+{% endblock %}

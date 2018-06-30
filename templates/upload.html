@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('index') }}">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}" class="current">Profil ({{ uname }})</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="imgupload">
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+				<input type="file" name="photo">
+				<input type="submit" class="input_btn1" value="Incarca">
+			</form>
+		</div>
+	</div>
+
+
+
+
+{% endblock %}

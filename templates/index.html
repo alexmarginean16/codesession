@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<meta http-equiv="refresh" content="1">
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('index') }}" class="current">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}">Profil ({{ uname }})
+					</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="index">
+		<div class="container" id="ref">
+			<table class="ontab">
+				<thead>
+					<tr>
+						<th>Online</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for i in user %}
+						<tr>
+							<td>{{ i.username }}</td>
+							<td><span class="online"></span></td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<div class="start">
+				<hr><br>
+				<h1>Incepe un joc nou!</h1>
+				<br><hr><br>
+				<button class="input_btn4" onclick="window.location.href='{{ url_for('alege') }}'">Gaseste un oponent</button>
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('index') }}">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}">Profil ({{ uname }})
+					</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="admin">
+		<div class="container">
+			<br>
+			<form method="POST" action="{{ url_for('editpoints', usrn=usrn) }}">
+				<div class="container">
+					<h1 class="t">Editare profil {{ usrn }}</h1>
+					<input type="text" placeholder="Puncte:" class="textfield_1" name="points">
+					<input type="text" placeholder="Jocuri jucate:" class="textfield_1" name="gamesp">
+					<input type="text" placeholder="Jocuri castigate:" class="textfield_1" name="gamesw">
+					<button type="submit" class="input_btn2">Salveaza!</button>
+				</div>
+			</form>
+		</div>
+	</section>
+{% endblock %}

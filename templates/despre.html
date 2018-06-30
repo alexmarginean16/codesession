@@ -1,0 +1,50 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('acasa') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('acasa') }}">Acasa</a></li>
+					<li><a href="{{ url_for('despre') }}" class="current">Despre</a></li>
+					<li><a href="{{ url_for('login') }}">Sign In</a></li>
+					<li><button onclick="window.location.href='{{ url_for('inregistrare') }}'" class="input_btn1">Sign up</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	<section class="motto">
+		<div class="container">
+			<h1>Tehnologii web folosite</h1>
+		</div>
+	</section>
+
+	<section class="information">
+		<div class="container">
+			
+				<div class="box">
+					<img src="../static/images/python.png">
+					<h4>Flask</h4>
+					<p>Flask este un framework python. Este folosit pentru partea de backend a website-ului.</p>
+				</div>
+				<div class="box">
+					<img src="../static/images/html.png">
+					<h4>HTML</h4>
+					<p>Html este folosit pentru continutul website-ului. Versiunea folosita este 5.0</p>
+				</div>
+				<div class="box">
+					<img src="../static/images/css.png">
+					<h4>CSS</h4>
+					<p>Css este folosit pentru estetica website-ului. Versiunea folosita este 3.0</p>
+				</div>
+
+		</div>
+	</section>
+
+{% endblock %}

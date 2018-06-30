@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('acasa') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('acasa') }}">Acasa</a></li>
+					<li><a href="{{ url_for('despre') }}">Despre</a></li>
+					<li><a href="{{ url_for('login') }}">Sign In</a></li>
+					<li><button onclick="window.location.href='{{ url_for('inregistrare') }}'" class="input_btn1">Sign up</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="login_form">
+		<form method="POST" action="{{ url_for('inregistrare') }}">
+		<div class="container">
+			{% if error %}
+    			<p class=error style="text-align: center; background:#ed8989; border: 1px Solid #e53b3b; padding-top: 20px; padding-bottom: 20px; color: #ffffff;"><strong>Eroare:</strong> {{ error }}</p>
+  			{% endif %}
+			<h1 class="t">Creeaza-ti propriul tau cont pe site!</h1>
+			<input type="text" placeholder="Prenume:" class="textfield_1" name="firstname">
+			<input type="text" placeholder="Nume:" class="textfield_1" name="lastname">
+			<input type="email" placeholder="Email:" class="textfield_1" name="email">
+			<input type="text" placeholder="Nume Utilizator:" class="textfield_1" name="username">
+			<input type="password" placeholder="Parola:" class="textfield_1" name="password">
+			<input type="password" placeholder="Repetare Parola:" class="textfield_1" name="passwordrep">
+			<!--<input type="text" placeholder="Varsta:" class="textfield_1">
+			<input type="text" placeholder="Sex:" class="textfield_1">-->
+			<button type="submit" class="input_btn2">Sign up</button>
+			<br><br>
+			<!--Intaine de inregistrare cititi <a href="#">termenii si contitiile.</a>-->
+		</div>
+		</form>
+	</div>
+
+{% endblock %}

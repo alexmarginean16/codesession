@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<!--<meta http-equiv="refresh" content="1">-->
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('index') }}">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}" class="current">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}">Profil ({{ uname }})</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container">
+		<!--{{ table }}-->
+		<table class="clasament">
+			<thead>
+				<tr>
+					<th>Nume de utilizator</th>
+					<th>Nume</th>
+					<th>Prenume</th>
+					<th>Punte</th>
+					<th><img src="../static/images/trofeu.png" style="width: 30px;"></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in user %}
+					<tr>
+						<td><a href="{{ url_for('profilpublic', usrn=i.username) }}">{{i.username}}</a></td>
+						<td>{{i.lastname}}</td>
+						<td>{{i.firstname}}</td>
+						<td>{{i.points}}</td>
+						<td>{{i.gamesw}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		
+	</div>
+
+
+
+
+{% endblock %}

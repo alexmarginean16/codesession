@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CODE SESSION | Acasa</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<!--<link rel="stylesheet" type="text/css" href="../static/css/main.css?q=1280549780">-->
+	<link rel="stylesheet" type="text/css"
+href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='js/codemirror/lib/codemirror.css') }}">
+	<link rel="icon" href="{{ url_for('static', filename='images/c_simple.png') }}">
+</head>
+<body>
+	{% block body %}{% endblock %}
+	<footer>
+		<p>Alex Marginean, Copyright &copy; 2018. </p>
+	</footer>
+</body>
+</html>

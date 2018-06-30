@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<meta http-equiv="refresh" content="1">
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('index') }}" class="current">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}">Profil ({{ uname }})
+					</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="admin">
+		<div class="container">
+			<br>
+			<button class="input_btn3" onclick="window.location.href='{{ url_for('adaugaprobleme') }}'">Adauga probleme</button>
+
+			{% for i in solutii %}
+			<div class="sol">
+					<p>ID: {{ i._id }}</p>
+					<h3>Jucatorul 1: {{ i.player1 }}</h3>
+					<h3>Jucatorul 2: {{ i.player2 }}</h3><br>
+					<a href="{{ url_for('solu',player1=i.player1) }}">Evalueaza solutii</a>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}

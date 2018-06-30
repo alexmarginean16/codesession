@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('acasa') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('acasa') }}">Acasa</a></li>
+					<li><a href="{{ url_for('despre') }}">Despre</a></li>
+					<li><a href="{{ url_for('login') }}" class="current">Sign In</a></li>
+					<li><button onclick="window.location.href='{{ url_for('inregistrare') }}'" class="input_btn1">Sign up</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="login_form">
+		<div class="container">
+		<form method="POST" action="{{ url_for('login') }}">
+			{% if error %}
+    			<p class=error style="text-align: center; background:#ed8989; border: 1px Solid #e53b3b; padding-top: 20px; padding-bottom: 20px; color: #ffffff;"><strong>Eroare:</strong> {{ error }}</p>
+  			{% endif %}
+			<h1 class="t">Conecteaza-te la contul tau</h1>
+			<input type="text" placeholder="Email:" class="textfield_1" name="email">
+			<input type="password" placeholder="Parola:" class="textfield_1" name="password">
+			<center>{{ recaptcha }}</center><br>
+			<button type="submit" class="input_btn2">Log in</button>
+			<!-- ############################################# -->
+			<!--<hr style="margin-bottom: 20px; width: 50%">
+			<input type="submit" value="Log in cu Google" class="input_btn3" style="width: 49.2%;">
+			<input type="submit" value="Log in cu facebook" class="input_btn5" style="width: 49.2%">
+			<br><br>
+			Intaine de inregistrare cititi <a href="#">termenii si contitiile.</a>-->
+		</form>
+		<button onclick="window.location.href='{{ url_for('twitter_login') }}'" class="input_btn3">Conecteaza-te cu Twitter</button>
+		</div>
+	</div>
+
+{% endblock %}

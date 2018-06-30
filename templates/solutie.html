@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<!--<meta http-equiv="refresh" content="1">-->
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="{{ url_for('static', filename='images/logo2.png') }}"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('index') }}">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}">Profil ({{ uname }})
+					</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="index">
+		<div class="container">
+			
+			<form method="POST" action="{{ url_for('puncteaza', player1=player1) }}">
+				<div class="cod">
+					<h1>Rezolvare {{ player1 }}:</h1><br>
+					<textarea class="codetextarea">{{ sursa1 }}</textarea><br><br>
+					<label>Punctaj:</label>
+					<input type="text" name="pct1" class="textfield_1"></input>
+				</div>
+				<div class="cod">
+					<h1>Rezolvare {{ player2 }}:</h1><br>
+					<textarea class="codetextareaa">{{ sursa2 }}</textarea><br><br>
+					<label>Punctaj:</label>
+					<input type="text" name="pct2" class="textfield_1"></input>
+				</div>
+				<button type="submit" class="input_btn2">Salveaza Punctaj</button>
+			</form>
+		</div>
+	</section>
+
+	<!-- javascript files-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/codemirror/lib/codemirror.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/default.js') }}"></script>
+	<script type="text/javascript" src="http://codemirror.net/mode/clike/clike.js"></script>
+{% endblock %}

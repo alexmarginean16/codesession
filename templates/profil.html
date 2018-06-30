@@ -1,0 +1,155 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<header>
+		<div class="container">
+			<div id="logo">
+				<a href="{{ url_for('index') }}" id="logo"><img src="../static/images/logo2.png"></a>
+			</div>
+			<nav>
+				<ul>
+					<!--<input type="submit" value="Sign up" class="input_btn1">-->
+					<li><a href="{{ url_for('index') }}">Dashboard</a></li>
+					<li><a href="{{ url_for('clasament') }}">Clasament</a></li>
+					<li><a href="{{ url_for('profil') }}" class="current">Profil ({{ uname }})</a></li>
+					<li><button onclick="window.location.href='{{ url_for('logout') }}'" class="input_btn1">Log out</button></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="profiletop">
+		<div class="container">
+			<div class="profileimage">
+				<!--<img src="../static/images/person_blank.png">-->
+				{% if imglink %}
+					<img src="{{ imglink }}">
+				{% else %}
+					<img src="../static/img/{{ usrn }}.png">
+				{% endif %}
+				{% if usrn == uname %}
+				<button onclick="window.location.href='{{ url_for('upload') }}'" class="input_btn4">Schimba fotografia</button>
+				{% endif %}
+			</div>
+			<div class="profilecontent">
+				<h1>{{ firstname }} {{ lastname }}</h1>
+				<p>Email: {{ email }}</p>
+				<p>Nume de utilizator: {{ usrn }}</p>
+				<p>Punctaj: {{ points }} puncte</p>
+				<img src="../static/images/trofeu.png" style="width: 15px">&nbsp;&nbsp;{{ nrjocuric }} &nbsp;&nbsp;&nbsp;
+				<img src="../static/images/gamepad.png" style="width: 25px">&nbsp;&nbsp;{{ nrjocuri }}
+
+
+				<br><br>
+
+				<h2>Grad: 
+					{% if points < 100 %}
+						<span id=bronz>Bronz</span>
+					{% endif %}
+					{% if points >= 100 and points < 500%}
+						<span id="argint">Argint</span>
+					{% endif %}
+					{% if points >= 500 and points < 1000 %}
+						<span id="aur">Aur</span>
+					{% endif %}
+					{% if points >= 1000 %}
+						<span id="expert">expert</span>
+					{% endif %}
+				</h2>
+			</div>
+		</div>
+	</section>
+	<section class="profilebottom">
+		<div class="container">
+			<h1>Medalii obtinute</h1>
+			<div class="achivments">
+				<div class="achivment">
+					<div class="achivmentcontent">
+						<div class="achivmentimg"><img src="../static/images/utilizatornou.png"></div>
+						<div class="achivmenttext">
+							<h3>Utilizator nou</h3>
+							<h3>+10 puncte</h3>
+							<h3>&nbsp;</h3>
+						</div>
+					</div>
+				</div>
+				{% if nrjocuri >= 1 %}
+				<div class="achivment">
+					<div class="achivmentcontent">
+						<div class="achivmentimg"><img src="../static/images/unu.png"></div>
+						<div class="achivmenttext">
+							<h3>Primul joc</h3>
+							<h3>+15 puncte</h3>
+							<h3>&nbsp;</h3>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if nrjocuri >= 10 %}
+				<div class="achivment">
+					<div class="achivmentcontent">
+						<div class="achivmentimg"><img src="../static/images/zece.png"></div>
+						<div class="achivmenttext">
+							<h3>Participare la 10 jocuri</h3>
+							<h3>+15 puncte</h3>
+							<h3>&nbsp;</h3>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if nrjocuri >= 50 %}
+				<div class="achivment">
+					<div class="achivmentcontent">
+						<div class="achivmentimg"><img src="../static/images/cincizeci.png"></div>
+						<div class="achivmenttext">
+							<h3>Participare la 50+ jocuri</h3>
+							<h3>+25 puncte</h3>
+							<h3>&nbsp;</h3>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if nrjocuric >= 1 %}
+				<div class="achivment">
+					<div class="achivmentcontent">
+						<div class="achivmentimg"><img src="../static/images/badge.png"></div>
+						<div class="achivmenttext">
+							<h3>Primul joc castigat</h3>
+							<h3>+30 puncte</h3>
+							<h3>&nbsp;</h3>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if nrjocuric >= 10 %}
+				<div class="achivment">
+					<div class="achivmentcontent">
+						<div class="achivmentimg"><img src="../static/images/zecec.png"></div>
+						<div class="achivmenttext">
+							<h3>10 jocuri castigate</h3>
+							<h3>+40 puncte</h3>
+							<h3>&nbsp;</h3>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if nrjocuric >= 50 %}
+				<div class="achivment">
+					<div class="achivmentcontent">
+						<div class="achivmentimg"><img src="../static/images/cincizecic.png"></div>
+						<div class="achivmenttext">
+							<h3>50+ jocuri castigate</h3>
+							<h3>+50 puncte</h3>
+							<h3>&nbsp;</h3>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+
+
+
+
+{% endblock %}
