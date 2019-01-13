@@ -5,7 +5,7 @@ Code session is a web application made with Flask, python designed for Romanian 
 ## :gear: Installation
 
 - Install python 3 (if not already installed). You can either install python by command line or from [here](https://www.python.org/downloads/)
-- Install pip 
+- Install pip3
 
 Make sure python3 and pip are installed by running `python3 --version` and `pip3 --version`
 
