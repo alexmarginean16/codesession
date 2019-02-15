@@ -1,4 +1,4 @@
-![Made with love in Romania](https://madewithlove.now.sh/ro)
+![Made with love in Romania](https://madewithlove.now.sh/ro?heart=true)
 
 # :space_invader: Code Session 
 
