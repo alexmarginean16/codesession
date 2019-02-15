@@ -1,3 +1,5 @@
+![Made with love in Romania](https://madewithlove.now.sh/ro)
+
 # :space_invader: Code Session 
 
 Code session is a web application made with Flask, python designed for Romanian students to compete with other people by solving informatics problems. After each solution is submitted, a "professor" (who has a administrator type account) has to review the code for each person and give points based on that. Each participant get awarded points, medals and thropies for representing either number of solutions submitted or number of wins.
