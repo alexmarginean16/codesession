@@ -29,3 +29,8 @@ Make sure python3 and pip are installed by running `python3 --version` and `pip3
         
 - Run the application `python mongo_connect.py`
 - The app is running on PORT 5000. Go to `http://127.0.0.1:5000`
+
+
+##Contributors
+
+[![](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/images/0)](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/links/0)[![](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/images/1)](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/links/1)[![](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/images/2)](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/links/2)[![](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/images/3)](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/links/3)[![](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/images/4)](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/links/4)[![](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/images/5)](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/links/5)[![](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/images/6)](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/links/6)[![](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/images/7)](https://sourcerer.io/fame/alexmarginean16/alexmarginean16/codesession/links/7)
