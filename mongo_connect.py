@@ -35,6 +35,7 @@ recaptcha.init_app(app)
 
 app.config['MONGO_DBNAME'] = 'csmongo'
 app.config['MONGO_URI'] = 'mongodb://csmongo:csmongo1@ds143388.mlab.com:43388/csmongo'
+#New link(migrated from mLab to MongoDB Atlas) mongodb+srv://csmongo:<password>@csmongo.pxbtz.mongodb.net/csmongo?retryWrites=true&w=majority
 
 mongo = PyMongo(app)
 
